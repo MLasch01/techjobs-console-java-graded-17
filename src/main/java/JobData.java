@@ -95,35 +95,11 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-//      int numColumns = allJobs.get(0).size();
-
-//      //ArrayList<HashMap<String, String>> jobResults = new ArrayList<>();
-        // HashSet<HashMap<String, String>> jobResults = new HashSet<>();
         String notCaseSensitive = value.toLowerCase();
         ArrayList<HashMap<String, String>> jobResults = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-//            for(int i = 0; i < numColumns; i++){
-//                String aValue = row.get(i);
-//                if (aValue.contains(value)) {
-//                    jobResults.add(row);
-//                    break;
-//                }
-//            }
-//            for (Map.Entry<String, String> entry : row.entrySet()) {
-//                jobResults.add(row);
-
-//                String aValue = row.get(value);
-
-//                if (aValue.contains(value)){
-//                    continue;
-//                    searchJobs.add(row);
-//                    break;
-
-//            boolean duplicate = false;
-//            for (Map.Entry<String, String> entry : job.entrySet()) {
-//                String results = entry.getValue();
-//                jobResults.add(row);
+//
                 for (String result : row.keySet()) {
                     String resultsColumn = row.get(result);
                 if (resultsColumn != null && resultsColumn.toLowerCase().contains(notCaseSensitive)) {
@@ -131,12 +107,7 @@ public class JobData {
                     break;
                 }
             }
-
-//            if (duplicate) {
-//                searchJobs.add(job);
-//            }
         }
-            //return new ArrayList<>(jobResults);
         return jobResults;
 
         // TODO - implement this method
